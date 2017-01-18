@@ -39,7 +39,6 @@ app.post('/webhook', function(req, res) {
         if (message.message.text) {
           var text = message.message.text;
           console.log(text); // In tin nhắn người dùng
-          console.log(entries);
           contentMessage(senderId, text);
         }
       }
@@ -72,16 +71,22 @@ function sendMessage(senderId, message) {
 /* Function Send Message */
 function contentMessage(senderId, text){
   if ( checkString(text, 'xin chao') || checkString(text, 'hello') || text == 'hi' ){
-    sendMessage(senderId, 'Xin chao ' + senderId + ':))');
+    sendMessage(senderId, 'Xin chao bạn ni:))');
     return;
   } else if ( checkString(text,'dota') && checkString(text,'lol') ){
     sendMessage(senderId, "3Q");
     return;
   } else if ( checkString(text, 'bye') || checkString(text, 'tam biet') || checkString(text, 'hen gap lai') ){
-    sendMessage(senderId, 'Chào tạm biệt và hẹn gặp lại ' + senderId + ':)');
+    sendMessage(senderId, 'Chào tạm biệt và hẹn gặp lại :)');
     return;
   } else if ( checkString(text, 'sai') || checkString(text, 'wrong') || checkString(text, 'khong') ){
     sendMessage(senderId, 'Giỏi thì nói xem nào ~_~');
+    return;
+  } else if ( checkString(text, 'hi hi') || checkString(text, 'ha ha') || checkString(text, 'ho ho') || checkString(text, 'he he') || checkString(text, 'hih') || checkString(text, 'hah') || checkString(text, 'hoh') || checkString(text, 'heh') || checkString(text, '))')){
+    sendMessage(senderId, 'Cười giề vậy :O');
+    return;
+  } else if ( checkString(text, 'hu hu') || checkString(text, 'huh') || checkString(text, ':(') ){
+    sendMessage(senderId, 'Buồn làm giề cho đời thêm khổ :D');
     return;
   } else if ( checkString(text, 'manh') || checkString(text, 'chich') ) {
     sendMessage(senderId, 'Đúng rồi, mạnh nữa đi, sướng, a a aaaaaaaa....');
@@ -91,6 +96,9 @@ function contentMessage(senderId, text){
     return;
   } else if ( checkString(text, 'yeu') || checkString(text, 'love') || checkString(text, 'thich') ) {
     sendMessage(senderId, 'Yêu giề');
+    return;
+  } else if ( checkString(text, 'ke') || checkString(text, 'xa') || checkString(text, 'bo mac') ) {
+    sendMessage(senderId, 'Đừng vậy mà :(');
     return;
   } else if ( checkString(text, 'wtf') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') ) {
     sendMessage(senderId, 'CMM');
