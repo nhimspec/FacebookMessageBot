@@ -76,6 +76,12 @@ function contentMessage(senderId, text){
   } else if ( checkString(text,'dota') && checkString(text,'lol') ){
     sendMessage(senderId, "3Q");
     return;
+  } else if ( checkString(text,'dota') ){
+    sendMessage(senderId, "Doto is the best, #S is the best :3");
+    return;
+  } else if ( checkString(text,'lol') || checkString(text,'lien minh')  ){
+    sendMessage(senderId, "LOL là gì vậy ? =)))");
+    return;
   } else if ( checkString(text, 'bye') || checkString(text, 'tam biet') || checkString(text, 'hen gap lai') ){
     sendMessage(senderId, 'Chào tạm biệt và hẹn gặp lại :)');
     return;
@@ -91,20 +97,14 @@ function contentMessage(senderId, text){
   } else if ( checkString(text, 'manh') || checkString(text, 'chich') ) {
     sendMessage(senderId, 'Đúng rồi, mạnh nữa đi, sướng, a a aaaaaaaa....');
     return;
-  } else if ( checkString(text, 'ghe') || checkString(text, 'dung') || checkString(text, 'true') ) {
-    sendMessage(senderId, 'Vâng, em cũng thấy thế');
-    return;
   } else if ( checkString(text, 'yeu') || checkString(text, 'love') || checkString(text, 'thich') ) {
     sendMessage(senderId, 'Yêu giề');
     return;
+  } else if ( checkString(text, 'shit') || checkString(text, 'cuc cuc') ) {
+    sendMessage(senderId, 'Tự bốc mà ăn :3');
+    return;
   } else if ( checkString(text, 'ke') || checkString(text, 'xa') || checkString(text, 'bo mac') ) {
     sendMessage(senderId, 'Đừng vậy mà :(');
-    return;
-  } else if ( checkString(text, 'wtf') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') ) {
-    sendMessage(senderId, 'CMM');
-    return;
-  } else if ( text == '@@' || text == '@_@' || text == '...' || text == ':|' || text == '-_-' || text == '~_~' ||  checkString(text, 'cai gie') ) {
-    sendMessage(senderId, 'a hi hi');
     return;
   } else if ( checkString(text, 'vai') || checkString(text, 'thoi')  ){
     sendMessage(senderId, 'Anh lo tán em đi không em lậy đọ');
@@ -118,14 +118,50 @@ function contentMessage(senderId, text){
   } else if ( checkString(text, 'that') || checkString(text, 'sure') || checkString(text, 'the a') ){
     sendMessage(senderId, 'Uầy, em chỉ biết nói đúng không à :v');
     return;
-  } else if ( checkString(text, 'khoa') || checkString(text, 'spec') || checkString(text, 'sonic') || checkString(text, 'bin') ){
+  } else if ( checkString(text, 'khoa') || checkString(text, 'spec') || checkString(text, 'sonic') || checkString(text, 'bin') || checkString(text, 'sp') ){
     sendMessage(senderId, 'Là người thông minh, đẹp chai nhất a hi hi');
+    return;
+  } else if ( checkString(text, 'rang rua') || checkString(text, 'chi rua') || checkString(text, 'rua da') ){
+    sendMessage(senderId, 'Răng với rứa chi đây -_-');
+    return;
+  } else if ( checkString(text, 'mo na') || checkString(text, 'mo he') || checkString(text, 'rua te')){
+    sendMessage(senderId, 'Mô tê chi đây hè!');
     return;
   } else if ( checkString(text, 'who') || checkString(text, 'la ai') || checkString(text, 'la gi') ){
     sendMessage(senderId, 'Siêu nhân điện quang');
     return;
-  } else if ( checkString(text, 'thong minh') || checkString(text, 'gioi') || checkString(text, 'hay') || checkString(text, 'tai') ){
+  } else if ( checkString(text, 'la sao') || checkString(text, 'how') || checkString(text, 'wth') || checkString(text, 'what') ){
+    sendMessage(senderId, 'Bó tay :p');
+    return;
+  } else if ( checkString(text, 'ngu ngon') || checkString(text, 'mo dep') || checkString(text, 'g9') || checkString(text, 'good nice')) {
+    sendMessage(senderId, 'Cảm ơn :3');
+    return;
+  } else if ( checkString(text, 'thong minh') || checkString(text, 'gioi') || checkString(text, 'hay') || checkString(text, 'tai') || checkString(text, 'vay a') || checkString(text, 'vay sao') || checkString(text, 'the a') || checkString(text, 'the sao') || checkString(text, 'nice') ){
     sendMessage(senderId, 'Tất nhiên rồi =)) ');
+    return;
+  } else if ( checkString(text, 'an') || checkString(text, 'uong') ){
+    sendMessage(senderId, 'Lên cân đó :p');
+    return;
+  } else if ( checkString(text, 'dong y') || checkString(text, 'tan thanh') || checkString(text, 'nhat tri') || checkString(text, 'like') ){
+    sendMessage(senderId, 'Vâng, em cũng thấy vậy đó mờ :3');
+    return;
+  } else if ( checkString(text, 'anh') || checkString(text, 'em') ){
+    sendMessage(senderId, 'Không!!!!!!!!!!!');
+    return;
+  } else if ( checkString(text, 'wtf') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') || checkString(text, 'loz') ) {
+    sendMessage(senderId, 'CMM');
+    return;
+  } else if ( checkString(text, 'ngon') || checkString(text, 'ngot') ) {
+    sendMessage(senderId, 'Tuyệt vời ^_^');
+    return;
+  } else if ( checkString(text, 'ghe') || checkString(text, 'dung') || checkString(text, 'true') ) {
+    sendMessage(senderId, 'Vâng, em cũng thấy thế');
+    return;
+  } else if ( text == '@' || text == '..' || text == ':|' || text == '-_-' || text == '~_~' ||  checkString(text, 'cai gie') || checkString(text, 'u') || checkString(text, 'o') ) {
+    sendMessage(senderId, 'a hi hi');
+    return;
+  } else if ( checkString(text, '1') || checkString(text, '2') || checkString(text, '3') || checkString(text, '4') || checkString(text, '5') || checkString(text, '6') || checkString(text, '7') || checkString(text, '8') || checkString(text, '9') || checkString(text, '0') ) {
+    sendMessage(senderId, 'Viết chữ đi, đừng viết số túi bó tay a nả -_-');
     return;
   } else {
     sendMessage(senderId, 'Nói giề vậy chài ~.~');
