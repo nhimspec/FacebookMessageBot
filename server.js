@@ -39,6 +39,7 @@ app.post('/webhook', function(req, res) {
         if (message.message.text) {
           var text = message.message.text;
           console.log(text); // In tin nhắn người dùng
+          console.log(message);
           contentMessage(senderId, text);
         }
       }
@@ -94,7 +95,7 @@ function contentMessage(senderId, text){
   } else if ( checkString(text, 'wtf') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') ) {
     sendMessage(senderId, 'CMM');
     return;
-  } else if ( text == '@@' || text == '@_@' || text == '...' || text == ':|' || text == '-_-' ||  checkString(text, 'cai gie') ) {
+  } else if ( text == '@@' || text == '@_@' || text == '...' || text == ':|' || text == '-_-' || text == '~_~' ||  checkString(text, 'cai gie') ) {
     sendMessage(senderId, 'a hi hi');
     return;
   } else if ( checkString(text, 'vai') || checkString(text, 'thoi')  ){
