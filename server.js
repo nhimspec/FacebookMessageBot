@@ -157,7 +157,7 @@ function contentMessage(senderId, text){
   } else if ( checkString(text, 'ghe') || checkString(text, 'dung') || checkString(text, 'true') ) {
     sendMessage(senderId, 'Vâng, em cũng thấy thế');
     return;
-  } else if ( text == '@' || text == '..' || text == ':|' || text == '-_-' || text == '~_~' ||  checkString(text, 'cai gie') || checkString(text, 'u') || checkString(text, 'o') ) {
+  } else if ( text == '@' || text == '..' || text == ':|' || text == '-_-' || text == '~_~' ||  checkString(text, 'cai gie') || checkString(text, 'u') || checkString(text, 'o') || checkString(text, '?') ) {
     sendMessage(senderId, 'a hi hi');
     return;
   } else if ( checkString(text, '1') || checkString(text, '2') || checkString(text, '3') || checkString(text, '4') || checkString(text, '5') || checkString(text, '6') || checkString(text, '7') || checkString(text, '8') || checkString(text, '9') || checkString(text, '0') ) {
