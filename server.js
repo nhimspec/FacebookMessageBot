@@ -153,7 +153,7 @@ function contentMessage(senderId, text){
   } else if ( checkString(text, 'anh') || checkString(text, 'em') ){
     sendMessage(senderId, 'Không!!!!!!!!!!!');
     return;
-  } else if ( checkString(text, 'wtf') || checkString(text, 'cc') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') || checkString(text, 'loz') ) {
+  } else if ( checkString(text, 'wtf') || checkString(text, 'im') || checkString(text, 'cc') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') || checkString(text, 'loz') ) {
     sendMessage(senderId, 'CMM');
     return;
   } else if ( checkString(text, 'ngon') || checkString(text, 'ngot') ) {
