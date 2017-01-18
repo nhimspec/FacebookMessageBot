@@ -5,8 +5,9 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var express = require('express');
 var router = express();
+var path = require('path');
 
-var app = express();
+var app = express();  
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -19,6 +20,10 @@ app.get('/', (req, res) => {
   res.send("Home page. Server running okay.");
 });
 
+app.get('/chatonline', function(req, res) {
+  res.sendFile(path.join(__dirname, 'chatonline', 'index.html'));
+});
+
 // Đây là đoạn code để tạo Webhook
 app.get('/webhook', function(req, res) {
   if (req.query['hub.verify_token'] === 'facebook_bot_message_spec') {
@@ -26,6 +31,7 @@ app.get('/webhook', function(req, res) {
   }
   res.send('Error, wrong validation token');
 });
+
 
 // Xử lý khi có người nhắn tin cho bot
 app.post('/webhook', function(req, res) {
@@ -44,7 +50,6 @@ app.post('/webhook', function(req, res) {
       }
     }
   }
-
   res.status(200).send("OK");
 });
 
