@@ -70,8 +70,11 @@ function sendMessage(senderId, message) {
 
 /* Function Send Message */
 function contentMessage(senderId, text){
-  if ( checkString(text, 'xin chao') || checkString(text, 'hello') || text == 'hi' ){
-    sendMessage(senderId, 'Xin chao bạn ni:))');
+  if ( checkString(text, 'bye') || checkString(text, 'tam biet') || checkString(text, 'hen gap lai') ){
+    sendMessage(senderId, 'Chào tạm biệt và hẹn gặp lại :)');
+    return;
+  } else if ( checkString(text, 'xin chao') || checkString(text, 'hello') || text == 'hi' ){
+    sendMessage(senderId, 'Xin chào bạn ni:))');
     return;
   } else if ( checkString(text,'dota') && checkString(text,'lol') ){
     sendMessage(senderId, "3Q");
@@ -81,9 +84,6 @@ function contentMessage(senderId, text){
     return;
   } else if ( checkString(text,'lol') || checkString(text,'lien minh')  ){
     sendMessage(senderId, "LOL là gì vậy ? =)))");
-    return;
-  } else if ( checkString(text, 'bye') || checkString(text, 'tam biet') || checkString(text, 'hen gap lai') ){
-    sendMessage(senderId, 'Chào tạm biệt và hẹn gặp lại :)');
     return;
   } else if ( checkString(text, 'sai') || checkString(text, 'wrong') || checkString(text, 'khong') ){
     sendMessage(senderId, 'Giỏi thì nói xem nào ~_~');
