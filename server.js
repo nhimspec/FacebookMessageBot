@@ -39,7 +39,7 @@ app.post('/webhook', function(req, res) {
         if (message.message.text) {
           var text = message.message.text;
           console.log(text); // In tin nhắn người dùng
-          sendMessage(senderId, "Tui là bot đây: " + text);
+          contentMessage(senderId, text);
         }
       }
     }
@@ -66,6 +66,82 @@ function sendMessage(senderId, message) {
       },
     }
   });
+}
+
+/* Function Send Message */
+function contentMessage(senderId, text){
+  if ( checkString(text, 'xin chao') || checkString(text, 'hello') || text == 'hi' ){
+    sendMessage(senderId, 'Xin chao ' + senderId + ':))');
+    return;
+  } else if ( checkString(text,'dota') && checkString(text,'lol') ){
+    sendMessage(senderId, "3Q");
+    return;
+  } else if ( checkString(text, 'bye') || checkString(text, 'tam biet') || checkString(text, 'hen gap lai') ){
+    sendMessage(senderId, 'Chào tạm biệt và hẹn gặp lại ' + senderId + ':)');
+    return;
+  } else if ( checkString(text, 'sai') || checkString(text, 'wrong') || checkString(text, 'khong') ){
+    sendMessage(senderId, 'Giỏi thì nói xem nào ~_~');
+    return;
+  } else if ( checkString(text, 'manh') || checkString(text, 'chich') ) {
+    sendMessage(senderId, 'Đúng rồi, mạnh nữa đi, sướng, a a aaaaaaaa....');
+    return;
+  } else if ( checkString(text, 'ghe') || checkString(text, 'dung') || checkString(text, 'true') ) {
+    sendMessage(senderId, 'Vâng, em cũng thấy thế');
+    return;
+  } else if ( checkString(text, 'yeu') || checkString(text, 'love') || checkString(text, 'thich') ) {
+    sendMessage(senderId, 'Yêu giề');
+    return;
+  } else if ( checkString(text, 'wtf') || checkString(text, 'vl') || checkString(text, 'cl') || checkString(text, 'cm') || checkString(text, 'dm') || checkString(text, 'fuck') ) {
+    sendMessage(senderId, 'CMM');
+    return;
+  } else if ( text == '@@' || text == '@_@' || text == '...' || text == ':|' || text == '-_-' ||  checkString(text, 'cai gie') ) {
+    sendMessage(senderId, 'a hi hi');
+    return;
+  } else if ( checkString(text, 'vai') || checkString(text, 'thoi')  ){
+    sendMessage(senderId, 'Anh lo tán em đi không em lậy đọ');
+    return;
+  } else if ( checkString(text, '??') || checkString(text, 'la sao') ){
+    sendMessage(senderId, 'Không hiểu thì thôi zạ :v');
+    return;
+  } else if ( checkString(text, 'that') || checkString(text, 'sure') || checkString(text, 'the a') ){
+    sendMessage(senderId, 'Uầy, em chỉ biết nói đúng không à :v');
+    return;
+  } else if ( checkString(text, 'khoa') || checkString(text, 'spec') || checkString(text, 'sonic') || checkString(text, 'bin') ){
+    sendMessage(senderId, 'Là người thông minh, đẹp chai nhất a hi hi');
+    return;
+  } else if ( checkString(text, 'who') || checkString(text, 'la ai') || checkString(text, 'la gi') ){
+    sendMessage(senderId, 'Siêu nhân điện quang');
+    return;
+  } else if ( checkString(text, 'thong minh') || checkString(text, 'gioi') || checkString(text, 'hay') || checkString(text, 'tai') ){
+    sendMessage(senderId, 'Tất nhiên rồi =)) ');
+    return;
+  } else {
+    sendMessage(senderId, 'Nói giề vậy');
+    return;
+  }
+}
+
+/*Function Check String*/
+function checkString(string, substring){
+  string = bodauTiengViet(string);
+  if ( string.indexOf(substring) !== -1 ){
+    return true;
+  } else {
+    return false;
+  }
+} 
+
+/*Function Bỏ Dấu*/
+function bodauTiengViet(str) {
+  str = str.toLowerCase();
+  str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+  str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+  str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+  str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+  str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+  str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+  str = str.replace(/đ/g, "d");
+  return str;
 }
 
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
