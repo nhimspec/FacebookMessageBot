@@ -112,6 +112,9 @@ function contentMessage(senderId, text){
   } else if ( checkString(text, '??') || checkString(text, 'la sao') ){
     sendMessage(senderId, 'Không hiểu thì thôi zạ :v');
     return;
+  } else if ( checkString(text, 'dep') || checkString(text, 'beautiful') || checkString(text, 'de thuong') || checkString(text, 'dang yeu') || checkString(text, 'xinh') ){
+    sendMessage(senderId, 'Bẩm sinh vậy ồi :v khổ ghê :p');
+    return;
   } else if ( checkString(text, 'that') || checkString(text, 'sure') || checkString(text, 'the a') ){
     sendMessage(senderId, 'Uầy, em chỉ biết nói đúng không à :v');
     return;
@@ -125,7 +128,7 @@ function contentMessage(senderId, text){
     sendMessage(senderId, 'Tất nhiên rồi =)) ');
     return;
   } else {
-    sendMessage(senderId, 'Nói giề vậy');
+    sendMessage(senderId, 'Nói giề vậy chài ~.~');
     return;
   }
 }
